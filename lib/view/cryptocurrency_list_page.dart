@@ -48,13 +48,12 @@ class _CryptocurrencyListPageState extends State<CryptocurrencyListPage> {
           } else {
             final List<Cryptocurrency> cryptocurrencies = snapshot.data!;
             return Scrollbar(
-                isAlwaysShown: true, // This ensures that the scrollbar is always visible
-                // controller: _scrollController, // Provide the ScrollController of your ListView
+                isAlwaysShown: true,
                 child:  ListView.builder(
               // physics: AlwaysScrollableScrollPhysics(),
               itemCount: cryptocurrencies.length,
-                  scrollDirection: Axis.vertical, // Set the direction of scrolling (e.g., horizontal)
-                  padding: EdgeInsets.symmetric(vertical: 8), // Add padding if needed
+                  scrollDirection: Axis.vertical,
+                  padding: EdgeInsets.symmetric(vertical: 8),
               itemBuilder: (context, index) {
                 final Cryptocurrency cryptocurrency = cryptocurrencies[index];
                 return
@@ -74,13 +73,6 @@ class _CryptocurrencyListPageState extends State<CryptocurrencyListPage> {
                           );
                         },
                       )),
-                      // SizedBox(
-                      //   width: double.infinity, // Set the width to match the parent width
-                      //   child: Container(
-                      //     height: 2, // Set the height to 1 pixel
-                      //     color: Colors.grey, // Optionally, you can set the color of the divider
-                      //   ),
-                      // ) // This creates a line between items
                     ],
                   );
               },
