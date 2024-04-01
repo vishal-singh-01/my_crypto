@@ -18,4 +18,29 @@ class Cryptocurrency {
     this.isFavorite = false,
   });
 
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'symbol': symbol,
+      'slug' : slug,
+      'first_historical_data': first_historical_data,
+      'last_historical_data' : last_historical_data,
+      'is_favorite': isFavorite ? 1 : 0,
+    };
+  }
+
+  factory Cryptocurrency.fromMap(Map<String, dynamic> map) {
+    return Cryptocurrency(
+      id: map['id'],
+      name: map['name'],
+      symbol: map['symbol'],
+      slug: map['slug'],
+      first_historical_data: map['first_historical_data'],
+      last_historical_data: map['last_historical_data'],
+      isFavorite: map['is_favorite'] == 1,
+    );
+  }
+
 }
